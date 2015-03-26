@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import requests
 
 
-## realm menu function##
+## realm menu function ##
 def realm_menu():
 	print ""
 	print ""
