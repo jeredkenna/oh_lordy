@@ -1,3 +1,9 @@
+def main():
+   	choice(url)
+	lvl_wanted(url)
+	if __name__ == "__main__":
+   		main()
+
 import time
 from pprint import pprint
 
@@ -54,26 +60,30 @@ realm_menu()
 time.sleep(1)
 ### lvl select function ###
 def lvl_select():
-
-	lvl_wanted = raw_input('What lvls do you want to display - separate by comma [1-12] : ')	
-	if lvl_wanted and int(lvl_wanted) in range(1,13):
+		
+	lvl_wanted = input('What lvls do you want to display - separate by comma [1-12] : ')	
+###	try:
+###		lvl_wanted = int(lvl_wanted)
+###	except:
+###		lvl_wanted = False
+	if lvl_wanted in range(1,13):
+		print ""			
 		print ""
-		print ""
-		print url
-		print "LORD SCRAPE ",realm.upper(), "REALM"
 		print ""
 		print "watching for level(s) ", lvl_wanted
 		print ""
-	else:
+   	else:			
 		print "only levels between 1 and 12"
-		lvl_select()
+		lvl_select()	
+	    
+
 lvl_select()
 ### sleep 1 seconds ###
 time.sleep(1)
 
 
 
-r  = requests.get("http://" +url)
+r  = requests.get("http://" + url)
 
 data = r.text
 
